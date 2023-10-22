@@ -6,4 +6,7 @@ module.exports = {
     unoptimized: true
   },
   assetPrefix: '/',
+  experimental: {
+    forceSwcTransforms: true,
+  },
 }
