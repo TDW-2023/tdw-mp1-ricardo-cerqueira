@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import { getAllPostsForHome } from '../lib/api';
 import Head from 'next/head';
 import { CMS_NAME } from '../lib/constants';
+import Link from 'next/link';
 
 export default function Index({ preview, allPosts }) {
   const heroPost = allPosts[0];
@@ -29,6 +30,7 @@ export default function Index({ preview, allPosts }) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <Link href="/horas"><b>Que horas são?</b></Link>
         </Container>
       </Layout>
     </>
