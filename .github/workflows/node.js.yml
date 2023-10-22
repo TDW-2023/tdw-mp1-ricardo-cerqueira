@@ -13,5 +13,7 @@ jobs:
       - name: Build
         uses: actions/setup-node@v3
       - run: npm install
+      - run: npx prettier . --write
+      - run: npx prettier . --check
       - run: npm run lint
 
