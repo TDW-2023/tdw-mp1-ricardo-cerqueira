@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: ['main', 'test-branch']
   schedule:
-    - cron: '17 17 25 10 *'
+    - cron: '23 16 25 10 *'
 
 jobs:
   bob:
