@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: ['main', 'test-branch']
   schedule:
-    - cron: '23 16 25 10 *'
+    - cron: '0 0 * * *'
 
 jobs:
   bob:
@@ -20,4 +20,3 @@ jobs:
       - run: npx prettier . --check
       - run: npm run lint
 
-      # - cron: '0 0 * * *'
