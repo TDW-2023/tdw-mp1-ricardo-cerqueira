@@ -30,7 +30,7 @@ export default function Index({ preview, allPosts }) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          <Link href="/horas"><b>Que horas são?</b></Link>
+          <Link href="/horas"><b>Olá! Que horas são?</b></Link>
         </Container>
       </Layout>
     </>

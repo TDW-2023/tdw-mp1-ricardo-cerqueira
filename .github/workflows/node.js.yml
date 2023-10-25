@@ -23,3 +23,16 @@ jobs:
       - run: npx prettier . --check
       - run: npm run lint
 
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main'
+    needs: [bob]
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy
+        uses: actions/setup-node@v3
+      - run: npm install
+      - run: npm run build
+      - run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
+
