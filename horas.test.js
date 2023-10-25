@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import React from 'react'
-import Horas from './horas.js'
+import Horas from './pages/horas.js'
 
 test('Boa tarde.', async () => {
 render(<Horas></Horas>);

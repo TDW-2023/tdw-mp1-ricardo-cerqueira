@@ -16,6 +16,7 @@
     "eslint": "^8.52.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "netlify-cli": "^16.9.2",
     "next": "latest",
     "prettier": "^3.0.3",
     "react": "latest",
