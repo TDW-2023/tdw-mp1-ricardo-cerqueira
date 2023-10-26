@@ -6,7 +6,7 @@ on:
   repository_dispatch:
     types: [contentful.deploy]
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '32 9 * * *'
 
 
 jobs:
@@ -25,7 +25,8 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main'
+    if: github.ref == 'refs/heads/main'
+
     needs: [bob]
     
     steps:
