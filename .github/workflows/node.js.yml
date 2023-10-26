@@ -36,5 +36,8 @@ jobs:
       - name: Deploy
         uses: actions/setup-node@v3
       - run: npm install
-      - run: ${{ secrets.CTFL_SPACE }} ${{ secrets.CTFL_ACCESSTOKEN }} npm run build
+      - run:  npm run build
+        env:
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CTFL_SPACE }}
+          CONTENTFUL_SPACE_ID: ${{ secrets.CTFL_ACCESSTOKEN }}
       - run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
