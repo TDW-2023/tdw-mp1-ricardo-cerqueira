@@ -46,8 +46,9 @@ deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   rules: 
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_PIPELINE_SOURCE == 'schedule' || $CI_PIPELINE_SOURCE == 'trigger'
+  variables:
+    CONTENTFUL_ACCESS_TOKEN: $CTFL_ACCESSTOKEN
+    CONTENTFUL_SPACE_ID: $CTFL_SPACE
   script:
        - npm run build
-       - echo "CONTENTFUL_ACCESS_TOKEN = $CTFL_ACCESSTOKEN" > .env
-       - echo "CONTENTFUL_SPACE_ID = $CTFL_SPACE" > .env
        - npx netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
