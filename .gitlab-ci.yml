@@ -34,12 +34,12 @@ prettier-job:       # This job runs in the build stage, which runs first.
   stage: prettier
   script:
       - npx prettier . --write
+      - npx prettier . --check
 
 jest-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   script:
        - npm run test
-       - npx prettier . --check
 
 lint-test-job:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
