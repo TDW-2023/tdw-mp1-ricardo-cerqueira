@@ -25,6 +25,8 @@ workflow:
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_COMMIT_BRANCH == "main" || $CI_PIPELINE_SOURCE == "push"
 
+image: node:20.9.0   
+
 before_script:
      - npm install
 
